@@ -36,7 +36,7 @@ pip install -r Login/requirements.txt
 
 ## Usage
 Web Application (PHP)
-Launch the web application on your server (e.g., XAMPP) and access it via http://localhost/diseasemanagement.
+Launch the web application on your server (e.g., XAMPP) and access it via http://localhost/managementdesease.
 When a user clicks on a button (e.g., to add a patient, diagnosis, etc.), the Tkinter interface will appear to handle those specific actions.
 When specific buttons related to disease statistics are clicked, Matplotlib will automatically generate the corresponding graphs.
 
