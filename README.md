@@ -20,7 +20,7 @@ Web and Python-based system for disease tracking, patient management, and medica
 
 ## Installation
 * Clone the repository
-git clone [https://github.com/your-username/disease-management.git](https://github.com/elghalbouni-oumaima/disease-management-system.git)
+git clone https://github.com/elghalbouni-oumaima/disease-management-system.git
 * cd MANAGEMENTDESEASE
 * Install PHP Dependencies
 Ensure that you have Composer installed (PHP dependency management tool). Then, install the required PHP dependencies: composer install
