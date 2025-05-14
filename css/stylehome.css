@@ -1,0 +1,387 @@
+:root{
+    --container_border: #839192  ;
+    --background_color:#44b0f8;
+    --tableheadco:#4468f8;
+    --search_bar_color:#7d82821f;
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.sidebar-container{
+    background-color:var(--background_color) ;
+    width: 14rem;
+   
+    height: 450vh; /* toute la hauteur de l'écran */
+    /*overflow-y: auto;  active le scroll si le contenu dépasse */
+    top: 0;
+    left: 0;
+    display: flex;
+    padding-bottom: 3rem;
+    flex-direction: column;
+}
+.sidebar-container img{
+   /* box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5); /* Adds a shadow */
+   margin: 0 auto;
+   filter: brightness(120%) contrast(50%) sepia(50%);
+
+  
+}
+.sidebar-container li{
+    padding: 10px;
+    text-decoration: none;
+    width: 300px;
+    
+}
+.sidebar-container .menu-elm .elm {
+    color:rgba(255, 255, 255, .8);
+    font-size: .90rem;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    
+}
+.sidebar-container .menu-elm .elm:hover{
+    color: white;
+}
+
+.sidebar-container .menu-elm .home-elm {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}
+
+.sidebar-container div {
+    text-align: left;
+    padding: 0 1rem;
+    font-weight: 700;
+    font-size: .69rem;
+    color: rgba(255, 255, 255, .4);
+}
+.menu-devider{
+    border: 1px solid rgba(255, 255, 255, 0.091);
+    margin: 10px 25px 10px 25px;
+}
+
+.topbar{
+    display:flex;
+    justify-content: space-between; /* Écarte les éléments entre les bords */
+    align-items: center; /* Centrer verticalement si nécessaire */
+    background-color: rgb(255, 255, 255);
+    height: 60px;
+    
+    padding: 20px;
+    border-bottom:3px solid var(--background_color);
+    box-shadow: .2rem .2rem .8rem rgb(92, 92, 93);
+   
+}
+
+
+
+.menuderaulement ul{
+    list-style: none;
+    background:white;
+    border: 2px solid transparent;
+   
+}
+.menuderaulement ul li{
+    display: inline-block;/* allows an element to behave like a block within a line of content.*/
+    position: relative;
+}
+li ul.sous-menu li{
+    display: block;
+}
+.menuderaulement ul li a {
+    display: block;
+    padding: 5px 20px;
+    color:var(--container_border);
+    text-decoration: none;
+    text-align:left;
+    color: black;
+    list-style-type: none;
+}
+
+.menuderaulement a {
+    font-size: 30px;
+    color: var(--container_border);
+    font-weight: 200;
+    text-decoration: none;
+    list-style-type: none;
+}
+.menuderaulement li {
+    list-style-type: none;
+}
+
+.menuderaulement ul.sous-menu{
+    width:auto;
+   
+    position:absolute;
+    z-index: 999;
+    display: none;
+}
+.menuderaulement a:hover{
+    color: var(--tableheadco);
+}
+
+ li:hover  ul.sous-menu{
+    display: block;
+
+}
+
+
+
+
+
+ 
+.topbar .search-bar{
+  display: flex !important;
+  position: relative !important; /* Ajout essentiel pour que le bouton soit positionné par rapport à ce conteneur */
+
+}
+.topbar .search-bar input{
+    width: 25rem !important;
+    height: 2.5rem !important;
+    background-color: var(--search_bar_color);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #858796;
+}
+
+.topbar .search-bar .btn button{
+    position: absolute !important;
+    right: 0 !important;
+    top: 0;
+    height: 100% !important;
+    background: var(--background_color);
+    border: none;
+    border-radius: 10px 0;
+}
+
+
+
+.topbar button{
+    border-radius: 25px;
+    padding:6px 15px;
+    color: white;
+    background-color: #acb4b4;
+    border-color: #acb4b4;
+    font-weight: 600;
+    font-size: 15px;
+}
+.topbar button:hover{
+    background-color: #7d8282;
+    border-color: #868989;
+}
+/*header a{
+    position: absolute;
+    top: 0;
+    left: 16rem;
+    margin: 0 10px 10px 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3;
+    position: absolute;
+    right: 4px;
+    bottom: 8px;
+}*/
+
+div.consult_patient{
+    margin: 15px;
+   display: grid;
+   justify-items: center;
+    
+    
+}
+
+.consult_patient .table_body{
+    
+    height: 30rem;
+    overflow: auto;
+}
+.consult_patient .table_body::-webkit-scrollbar {
+    width: 0.3rem;  /* Largeur */
+    height: 0.7rem;
+}
+
+.consult_patient .table_body::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #4d5860, rgb(33 148 234 / 59%)); /* Dégradé bleu */
+    border-radius: 10px;  /* Coins arrondis */
+    visibility: hidden;
+    
+}
+.consult_patient .table_body:hover::-webkit-scrollbar-thumb {
+    /* Coins arrondis */
+    visibility: visible;
+}
+
+.consult_patient .table_body::-webkit-scrollbar-track {
+    background: rgba(230, 196, 196, 0.1); /* Fond de la scrollbar */
+    border-radius: 10px;
+}
+
+.consult_patient  table, td,th{
+    border-bottom: 1px solid   rgb(250, 244, 244);
+    padding: 0.5rem 1rem;
+    white-space: nowrap;/* Empêche le retour à la ligne */
+    border-collapse: collapse;/*makes table borders collapse into a single border, instead of having separate borders for each cell.*/
+    
+    
+}
+
+.consult_patient h2{
+    height: 4rem;
+    font-weight: 500;
+    color: var(--tableheadco);
+   border-radius: 10px 10px 0 0;
+   padding: .3rem .7rem; 
+}
+.consult_patient h2:hover{
+    text-decoration: underline;
+}
+.consult_patient thead th{
+    background-color: var(--tableheadco);
+    position: sticky; /*to fix the head of the table*/
+    top: 0;
+    left: 0;
+    height: 4rem;
+    color: white;
+}
+
+.consult_patient tbody tr:hover{
+    
+    background-color:var(--search_bar_color);
+
+}
+
+.acount-container{
+    position: relative;
+}
+.acount-container label:first-child{
+    color: var(--container_border);
+    font-size: 30px;
+}
+.acount-container input{
+    display: none;
+}
+.acount-container .acount-btn{
+    display: inline-block;
+    transform: .2s ease-in-out;
+    font-size: 25px;
+}
+.acount-container .acount-options{
+    overflow:hidden;
+    padding: 10px 15px;
+    transition: .3s ease-in-out;
+    transform-origin: top right ;
+    transform: scale(.8);
+    opacity: 0;
+    top:55px;
+    position: absolute;
+    left: -90px;
+    width: auto;
+    text-align: center;
+    box-shadow:0 .2rem .5rem #0004;
+    border-radius:.5rem;
+    background: #f2f2f2;
+    
+}
+
+.acount-container input:checked + .acount-options{
+    opacity: 1;
+   transform: scale(1);
+}
+.acount-container .acount-options label{
+width: 100%;
+
+text-align: left;
+}
+.acount-container .acount-options  a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap:10px;
+    
+}
+.acount-container .acount-options  span{
+    font-size: .87rem;
+    font-weight: 400;
+    color: black;
+    white-space: nowrap;
+    font-family: Nunito, -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, 
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    
+}
+
+.notif-container{
+    background:#7d82821f;
+    border-radius:50%; 
+    width:40px;
+    height:40px;
+    position:relative;
+}
+.notif-container:hover{
+    background:#4646461f;
+}
+.notif-container .notif-icon{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.notif-container .notif-count{
+    background:red;border-radius:50%;
+    position:absolute;
+    right:-4px;
+    top:-6px;
+    width:20px;
+    height:20px;
+    display:flex;
+    align-items: center;
+    justify-content :center;
+    font-size:10px;color:white;
+}
+.notif-box{
+    overflow: auto;
+    opacity: 0;
+   transform: scale(0.8);
+    background-color: #f2f2f2;
+    width: 300px;
+    /* padding: 10px; */
+    border-radius: .35rem;
+    position: absolute;
+    left: -250px;
+    transition: .3s ease-in-out;
+    transform-origin: top right ;
+
+}
+.notif-box .notiflabel{
+    background-color: #4468f8;
+    width: 100%;
+    padding: 8px 0 8px 30px;
+    text-transform: uppercase;
+    font-size: .65rem;
+    font-weight: 800;
+    color: aliceblue;
+}
+.href-notif{
+    width: 100%;
+    line-height: 1.3rem;
+    font-weight: 600;
+    font-size: 70%;
+    text-align: center;
+}
+/* .notif-container  input:checked + .notif-box{
+    opacity: 1;
+   transform: scale(1);
+} */

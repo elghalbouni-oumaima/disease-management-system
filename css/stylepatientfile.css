@@ -1,0 +1,157 @@
+:root{
+    --personel_inf:#4468f8;
+    --symptome:#ef5350 ;
+    --diagnosis: #3333FF ;
+    --background_color:#44b0f8;
+    --search_bar_color:#7d82821f;
+    --traitement:#1cc88a;
+}
+
+/*🚫🚫🚫🚫🚫*/
+
+.table_body{
+    /*background-color: rgb(33 148 234 / 15%);
+     border-radius: 25px;*/
+    max-width:97% !important;
+    max-height: 85%;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+.table_body::-webkit-scrollbar {
+    width: 0.4rem;  /* Largeur */
+    height: 0.7rem;
+}
+
+.table_body::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #4d5860, rgb(33 148 234 / 59%)); /* Dégradé bleu */
+    border-radius: 10px;  /* Coins arrondis */
+    visibility: hidden;
+    
+}
+.table_body:hover::-webkit-scrollbar-thumb {
+    /* Coins arrondis */
+    visibility: visible;
+}
+
+.table_body::-webkit-scrollbar-track {
+    background: rgba(230, 196, 196, 0.1); /* Fond de la scrollbar */
+    border-radius: 10px;
+}
+
+
+table, td,th{
+    border-bottom: 1px solid   rgb(250, 244, 244);
+    white-space: nowrap;/* Empêche le retour à la ligne */
+    border-collapse: collapse;/*makes table borders collapse into a single border, instead of having separate borders for each cell.*/
+    
+}
+
+.table_title{
+    display: flex;
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Sépare le texte et l'image */
+    width: 100%;
+   border-radius: 10px 10px 0 0;
+   padding: .6rem .7rem;
+}
+
+
+.table_title h1{
+    font-size: 30px;
+    font-weight: 500;
+   
+}
+.table_title h1:hover{
+    text-decoration: underline;
+}
+
+.table_title i{
+    font-size: 40px;
+    
+}
+
+ thead th{
+    border-collapse: collapse;/*makes table borders collapse into a single border, instead of having separate borders for each cell.*/
+   /* opacity: 0.5;*/
+    position: sticky; /*to fix the head of the table*/
+    top: 0;
+    left: 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+    padding: 1rem 2rem;
+    white-space: nowrap;/* Empêche le retour à la ligne */
+  
+}
+
+tbody tr:hover{
+    background-color: var(--search_bar_color);
+    font-weight: 400;
+    
+}
+
+.personnel-inf,.symptom,.diagnosis,.treatments{
+    margin: 4rem 4rem 0 4rem;
+    display: grid; /*🚫🚫🚫🚫🚫*/
+   border-radius: 10px; 
+   height: auto;
+    box-shadow: .3rem .3rem .5rem rgb(92, 92, 93), 
+    -4px -4px 5px rgba(255, 255, 255, 0.8);
+   
+}
+.personnel-inf{
+    border: 3px solid var(--personel_inf);
+}
+
+.personnel-inf .table_title{
+    color: var(--personel_inf) !important;
+   
+}
+.personnel-inf thead th{
+    background-color: var(--personel_inf);
+}
+
+
+
+.symptom{
+   border: 3px solid var(--symptome);
+   justify-items: center;
+   
+}
+.symptom  .table_title{
+    padding: 10px;
+    color: var(--symptome) !important;
+
+}
+.symptom thead th{
+    background-color: var(--symptome);
+}
+
+.diagnosis{
+    border: 3px solid var(--diagnosis);
+    justify-items: center;
+}
+
+.diagnosis .table_title{
+    /* gap: 55%; Ajoute un espace entre le texte et l'icône */
+    color: var(--diagnosis) !important;
+}
+.diagnosis thead th{
+    background-color: var(--personel_inf);
+}
+
+
+
+.treatments{ 
+    border: 3px solid var(--traitement);
+    justify-items: center;
+    
+ }
+ .treatments  .table_title{
+     
+     color: var(--traitement) !important;
+ 
+ }
+ .treatments thead th{
+     background-color: var(--traitement);
+ }

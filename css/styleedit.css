@@ -1,0 +1,39 @@
+ .edit-contaner{
+    margin: 4rem 4rem 0 4rem;
+    
+   border-radius: 10px; 
+    
+   
+}
+.edit-contaner label{
+    color: darkgray;
+    font-weight: 400;
+}
+.edit-contaner label:hover{
+    text-decoration: underline;
+}
+.edit-contaner input{
+    margin: 10px 0;
+    height: 30px;
+   
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.edit-contaner h2{
+    color: #44b0f8;
+    margin: 20px 0;
+}
+.edit-contaner h2:hover{
+    text-decoration:underline;
+}
+.edit-contaner button{
+    margin: 10px 5px;
+    padding: 5px 14px;
+    color: white;
+    font-weight: 500;
+    border: none;
+    outline: none;
+}
+.edit-contaner button:hover{
+    border-color: darkgray;
+}
