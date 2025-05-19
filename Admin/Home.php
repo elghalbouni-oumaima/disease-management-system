@@ -59,6 +59,42 @@ $row=$res->fetch_row();
                
                 }
             })
+
+            var sidebaretoggle =document.getElementById('sidebaretoggle');
+            sidebaretoggle.addEventListener('click',function(){
+                let sidebar_container = document.querySelector('.sidebar-container'),
+                sidebarelm = document.querySelectorAll('.sidebar-container .menu-elm .elm');
+                divelm = document.querySelectorAll('.sidebar-container >div');
+                console.log(divelm);
+                if ( sidebar_container.style.width == "7rem"){
+                    sidebar_container.style.width = "";
+                    sidebarelm.forEach(element => {
+                        element.style.flexDirection="row";
+                        element.style.whiteSpace="nowrap";
+                    });
+                    divelm.forEach(element => {
+                        element.style.fontSize="";
+                        element.style.color= "";
+                        element.style.textAlign="";
+                    });
+                    
+                }
+                else{
+                    sidebar_container.style.width = "7rem";
+                    sidebarelm.forEach(element => {
+                        element.style.flexDirection="column";
+                        element.style.fontSize=".65rem";
+                        element.style.whiteSpace="normal";
+                    });
+                    divelm.forEach(element => {
+                        element.style.fontSize=".80rem";
+                        element.style.color= "rgb(72 65 65 / 47%)";
+                        element.style.textAlign="center";
+                    });
+                }
+                
+
+            })
             
             
         });
@@ -66,8 +102,8 @@ $row=$res->fetch_row();
 </head>
 <body style="display:flex;">
 <!-- sidebar -->
-<nav>
-    <ul class="sidebar-container">
+<nav >
+    <ul class="sidebar-container" >
         <img src="../images/doctorimg.png" alt="" width="100" height="110">
         <hr class="menu-devider">
         <li class="menu-elm">
@@ -81,25 +117,37 @@ $row=$res->fetch_row();
         <div>Patient</div>
         <li class="menu-elm">
             <a href="patientrecords.php" class="elm">
-                <ion-icon name="list-outline"></ion-icon>
+                <div style="font-size:.90rem;color:white;">
+                    <ion-icon name="list"></ion-icon>
+                </div>
+                
                 <span>Patient List</span>
             </a>
         </li>
         <li class="menu-elm">
             <a href="change_deleteddoctor.php" class="elm">
-                    <ion-icon name="list-outline"></ion-icon>
+                <div style="font-size:.90rem;color:white;">
+                     <ion-icon name="list"></ion-icon>
+                </div>
+                   
                     <span>Patient List (Deleted Doctor)</span>
             </a>
         </li>
         <li class="menu-elm">
             <a href="diagnosisRedcords.php"  class="elm">
-                <ion-icon name="medkit-outline"></ion-icon>
+                <div style="font-size:.90rem;color:white;">
+                    <ion-icon name="medkit"></ion-icon>
+                </div>
+                
                 <span>Diagnosis Records</span>
             </a>
         </li>
         <li class="menu-elm">
             <a href="TreatmentsRecords.php" class="elm">
-                <ion-icon name="document-text-outline"></ion-icon>
+                <div style="font-size:.90rem;color:white;">
+                    <ion-icon name="document-text"></ion-icon>
+                </div>
+                
                 <span>Treatments Record</span>
             </a>
         </li>   
@@ -110,13 +158,19 @@ $row=$res->fetch_row();
         <div>Doctor</div>
         <li class="menu-elm">
             <a href="doctorrecords.php" class="elm">
-                <iconify-icon icon="fontisto:doctor"></iconify-icon>
+                <div style="font-size:.90rem;color:white;">
+                    <iconify-icon icon="fontisto:doctor"></iconify-icon>
+                </div>
+                
                 <span>Doctor Records</span>
             </a>
         </li>
         <li class="menu-elm">
             <a href="doctorrequests.php"  class="elm">
-                <ion-icon name="document-text-outline"></ion-icon>
+                <div style="font-size:.90rem;color:white;">
+                    <ion-icon name="document-text"></ion-icon>
+                </div>
+                
                 <span>Doctor Requests</span>
             </a>
         </li>
@@ -128,14 +182,20 @@ $row=$res->fetch_row();
         <div>Statistics</div>
         <li class="menu-elm">
             <a href="doctorstatistics.php" class="elm">
-                <ion-icon name="stats-chart-outline"></ion-icon>
+                <div style="font-size:.90rem;color:white;">
+                    <ion-icon name="stats-chart"></ion-icon>
+                </div>
+                
                 <span>Doctor Statistics</span>
             </a>
           
         </li>
         <li class="menu-elm">
             <a href="patienttatistics.php" class="elm">
-                <ion-icon name="stats-chart-outline"></ion-icon>
+                <div style="font-size:.90rem;color:white;">
+                    <ion-icon name="stats-chart"></ion-icon>
+                </div>
+                
                 <span>Patients Statistics</span>
             </a>
           
@@ -147,18 +207,34 @@ $row=$res->fetch_row();
         <div>Other</div>
         <li class="menu-elm">
             <a href="profile.php" class="elm">
-                <iconify-icon icon="fontisto:doctor"></iconify-icon>
+                <div style="font-size:.90rem;color:white;">
+                    <iconify-icon icon="fontisto:doctor"></iconify-icon>
+                </div>
+                
                 <span>My Profile</span>
             </a>
         </li>
         <li class="menu-elm">
             <a href="changepassword.php" class="elm">
-                <ion-icon name="help-circle-outline"></ion-icon>
+                <div style="font-size:1.1rem;color:white;">
+                    <ion-icon name="help-circle"></ion-icon>
+                </div>
+                
                 <span>Change Passsword</span>
             </a>
         </li>
+        <div style="width:100%;display:flex;justify-content:center;margin-top:20px;">
+            <div class="sidebar-toggle">
+                <button id="sidebaretoggle">
+                    <i class='bx bx-chevron-left'></i>
+                </button>
+            </div>
+        </div>
+        
         
     </ul>
+
+    
  
 </nav>
 <!-- end sidebar -->

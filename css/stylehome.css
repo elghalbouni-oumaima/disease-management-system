@@ -33,16 +33,24 @@
 .sidebar-container li{
     padding: 10px;
     text-decoration: none;
-    width: 300px;
+    width: 100%;
     
 }
 .sidebar-container .menu-elm .elm {
     color:rgba(255, 255, 255, .8);
     font-size: .90rem;
+    white-space: nowrap;
     text-decoration: none;
     text-align: center;
     width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     
+}
+.elm ion-icon{
+    font-weight: 900;
+    font-size: 1.20rem;
 }
 .sidebar-container .menu-elm .elm:hover{
     color: white;
@@ -56,7 +64,7 @@
     text-align: center;
 }
 
-.sidebar-container div {
+.sidebar-container > div {
     text-align: left;
     padding: 0 1rem;
     font-weight: 700;
@@ -385,3 +393,26 @@ text-align: left;
     opacity: 1;
    transform: scale(1);
 } */
+
+.sidebar-toggle{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255 255 255 / 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar-toggle:hover{
+    background-color: rgba(255, 255, 255, 0.258);
+    
+}
+.sidebar-toggle button{
+    background: transparent;
+    border: none;
+    font-size: 20px;
+}
+.sidebar-toggle button i{
+    color:#e1eaeaa8;
+    font-weight: 600;
+}
