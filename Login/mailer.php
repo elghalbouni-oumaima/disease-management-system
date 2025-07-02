@@ -8,7 +8,7 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(__DIR__); 
 
 //load variables
-if ($dotenv->safeLoad()) {
+if (!$dotenv->safeLoad()) {
     die( "Erreur lors du chargement du fichier .env mailer.\n");
 } 
 
@@ -38,13 +38,13 @@ try {
     $mail->Port = 587;
 
     // SMTP server authentication username
-    $mail->Username = "m31306614@gmail.com";  // Enter the SMTP server username 
+    $mail->Username =  $_ENV['SMTP_USERNAME'];;  // Enter the SMTP server username 
 
     // SMTP server authentication password
     $mail->Password = $_ENV['App_password'];  // Enter the password for the SMTP server
 
     // Set the mailer to use HTML format
-    $mail->isHtml(true);
+    $mail->isHTML(true);
 
     // Return the PHPMailer object to allow further manipulation or sending
     return $mail;

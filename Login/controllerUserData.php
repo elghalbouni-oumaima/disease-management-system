@@ -86,7 +86,7 @@ if(isset($_POST['verify'])){
     }
     if($conn->affected_rows){
         $mail=require __DIR__ . "/mailer.php";
-        $mail->setFrom("m31306614@gmail.com");
+        $mail->setFrom( $_ENV['SMTP_USERNAME']);
         $mail->addAddress($email);
         $mail->Subject="Password Reset";
         $mail->Body= <<<END

@@ -59,31 +59,73 @@ $row=$res->fetch_row();
                
                 }
             })
-
+            let sidebar_container = document.querySelector('.sidebar-container'),
+            sidebarelm = document.querySelectorAll('.sidebar-container .menu-elm .elm '),
+            sidebartitle = document.querySelectorAll('.elm span'),
+            sidebarhome = document.querySelector('.home-elm'),
+            sidebarhomespan = sidebarhome.querySelector('span'),
+            sidebarhomei = sidebarhome.querySelector('i'),
+            divelm = document.querySelectorAll('.sidebar-container >div');
             var sidebaretoggle =document.getElementById('sidebaretoggle');
+            console.log(sidebarhomespan);
+            // 🔁 Restaurer l’état depuis localStorage
+            if (localStorage.getItem('sidebarState') === 'collapsed') {
+                collapseSidebar();
+            } else {
+                expandSidebar();
+            }
             sidebaretoggle.addEventListener('click',function(){
-                let sidebar_container = document.querySelector('.sidebar-container'),
-                sidebarelm = document.querySelectorAll('.sidebar-container .menu-elm .elm');
-                divelm = document.querySelectorAll('.sidebar-container >div');
+         
                 console.log(divelm);
                 if ( sidebar_container.style.width == "7rem"){
-                    sidebar_container.style.width = "";
+                    expandSidebar();
+                    localStorage.setItem('sidebarState', 'expanded');
+                }
+                else{
+                    collapseSidebar();
+                    localStorage.setItem('sidebarState', 'collapsed');
+                    
+                }
+                
+
+            });
+            
+            function expandSidebar(){
+                sidebar_container.style.width = "";
+                sidebarhome.style.flexDirection = "row";
+                sidebarhome.style.whiteSpace = "nowrap";
+                sidebarhomespan.style.display = "block";
+                sidebarhomei.style.fontSize = "";
+                console.log(sidebarhomespan.style.dispaly);
+                    sidebartitle.forEach(element => {
+                        element.style.fontSize = "";
+                        
+                    });
                     sidebarelm.forEach(element => {
                         element.style.flexDirection="row";
                         element.style.whiteSpace="nowrap";
+                        
                     });
                     divelm.forEach(element => {
                         element.style.fontSize="";
                         element.style.color= "";
                         element.style.textAlign="";
                     });
-                    
-                }
-                else{
-                    sidebar_container.style.width = "7rem";
+
+            }
+            function collapseSidebar(){
+                sidebar_container.style.width = "7rem";
+                sidebarhomespan.style.display = "none";
+                sidebarhomei.style.fontSize = "2rem";
+                console.log(sidebarhomespan.style.dispaly);
+                sidebarhome.style.flexDirection = "column";
+                sidebarhome.style.whiteSpace = "normal";
+                sidebartitle.forEach(element => {
+                        element.style.fontSize = ".65rem";
+                        
+                    });
                     sidebarelm.forEach(element => {
                         element.style.flexDirection="column";
-                        element.style.fontSize=".65rem";
                         element.style.whiteSpace="normal";
                     });
                     divelm.forEach(element => {
@@ -91,12 +133,8 @@ $row=$res->fetch_row();
                         element.style.color= "rgb(72 65 65 / 47%)";
                         element.style.textAlign="center";
                     });
-                }
-                
 
-            })
-            
-            
+            }
         });
     </script>
 </head>
@@ -117,7 +155,7 @@ $row=$res->fetch_row();
         <div>Patient</div>
         <li class="menu-elm">
             <a href="patientrecords.php" class="elm">
-                <div style="font-size:.90rem;color:white;">
+                <div style="color:white;">
                     <ion-icon name="list"></ion-icon>
                 </div>
                 
@@ -126,7 +164,7 @@ $row=$res->fetch_row();
         </li>
         <li class="menu-elm">
             <a href="change_deleteddoctor.php" class="elm">
-                <div style="font-size:.90rem;color:white;">
+                <div style="color:white;">
                      <ion-icon name="list"></ion-icon>
                 </div>
                    
@@ -135,7 +173,7 @@ $row=$res->fetch_row();
         </li>
         <li class="menu-elm">
             <a href="diagnosisRedcords.php"  class="elm">
-                <div style="font-size:.90rem;color:white;">
+                <div style="color:white;">
                     <ion-icon name="medkit"></ion-icon>
                 </div>
                 
@@ -144,7 +182,7 @@ $row=$res->fetch_row();
         </li>
         <li class="menu-elm">
             <a href="TreatmentsRecords.php" class="elm">
-                <div style="font-size:.90rem;color:white;">
+                <div style="color:white;">
                     <ion-icon name="document-text"></ion-icon>
                 </div>
                 
@@ -158,7 +196,7 @@ $row=$res->fetch_row();
         <div>Doctor</div>
         <li class="menu-elm">
             <a href="doctorrecords.php" class="elm">
-                <div style="font-size:.90rem;color:white;">
+                <div style="color:white;">
                     <iconify-icon icon="fontisto:doctor"></iconify-icon>
                 </div>
                 
@@ -167,7 +205,7 @@ $row=$res->fetch_row();
         </li>
         <li class="menu-elm">
             <a href="doctorrequests.php"  class="elm">
-                <div style="font-size:.90rem;color:white;">
+                <div style="color:white;">
                     <ion-icon name="document-text"></ion-icon>
                 </div>
                 
@@ -182,7 +220,7 @@ $row=$res->fetch_row();
         <div>Statistics</div>
         <li class="menu-elm">
             <a href="doctorstatistics.php" class="elm">
-                <div style="font-size:.90rem;color:white;">
+                <div style="color:white;">
                     <ion-icon name="stats-chart"></ion-icon>
                 </div>
                 
@@ -192,7 +230,7 @@ $row=$res->fetch_row();
         </li>
         <li class="menu-elm">
             <a href="patienttatistics.php" class="elm">
-                <div style="font-size:.90rem;color:white;">
+                <div style="color:white;">
                     <ion-icon name="stats-chart"></ion-icon>
                 </div>
                 
@@ -207,7 +245,7 @@ $row=$res->fetch_row();
         <div>Other</div>
         <li class="menu-elm">
             <a href="profile.php" class="elm">
-                <div style="font-size:.90rem;color:white;">
+                <div style="color:white;">
                     <iconify-icon icon="fontisto:doctor"></iconify-icon>
                 </div>
                 
@@ -216,7 +254,7 @@ $row=$res->fetch_row();
         </li>
         <li class="menu-elm">
             <a href="changepassword.php" class="elm">
-                <div style="font-size:1.1rem;color:white;">
+                <div style="color:white;">
                     <ion-icon name="help-circle"></ion-icon>
                 </div>
                 
@@ -277,7 +315,7 @@ $row=$res->fetch_row();
             <div class="acount-options" >
                 <label for="acount">
                     <a href="profile.php">
-                    <i class='bx bxs-user-circle'  style="color:#839192;font-size:18px"></i>
+                    <i class='bx bxs-user-circle'  style="color:#839192;"></i>
                     <span >Profile</span>
                     </a>
                 </label>
